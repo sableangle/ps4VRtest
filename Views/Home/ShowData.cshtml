@@ -1,0 +1,29 @@
+@model  IEnumerable<PS4Test.Controllers.HomeController.MissionData>
+
+<div class="container">
+    <h2>任務平均時間</h2>
+    <p>從十個實驗樣本中所計算出不同任務的平均花費時間</p>            
+    <table class="table table-striped">
+    <thead>
+        <tr>
+        <th>受測者</th>
+        <th>模式</th>
+        <th>任務一</th>
+        <th>任務二</th>
+        <th>任務二結束情形</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model){
+            <tr>
+                <th>@item.User</th>
+                <td>@item.Mode</td>
+                <td>@item.mission01Time</td>
+                <td>@item.mission02Time</td>
+                <td>@item.End</td>
+            </tr>
+        }
+      
+    </tbody>
+    </table>
+</div>
