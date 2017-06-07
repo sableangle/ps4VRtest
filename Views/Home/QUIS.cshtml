@@ -1,0 +1,92 @@
+@{
+    PS4Test.Controllers.HomeController.QuisArrvTime quisarrvTime = (PS4Test.Controllers.HomeController.QuisArrvTime)ViewBag.quisarrvTime;
+
+    Dictionary<string ,PS4Test.Controllers.HomeController.QuisArrvTime> persionQUIS =  (Dictionary<string ,PS4Test.Controllers.HomeController.QuisArrvTime>)ViewBag.persionQUIS;
+
+    TTest.TTestController.TTestResult quisTestResult = (TTest.TTestController.TTestResult)ViewBag.quisTestResult;
+}
+
+
+<div class="container">
+    <h2>QUIS 分數平均</h2>
+    <p>本 QUIS 量表滿分為 190 分數越高代表使用者體驗越好！</p>            
+    <table class="table table-hover" style="text-align:center;">
+    <thead>
+        <tr>  
+            <th class="col-md-4" style="text-align:center;"></th>
+            <th class="col-md-4" style="text-align:center;">VR 控制器</th>
+            <th class="col-md-4" style="text-align:center;">傳統控制器</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>           
+            <td>平均數</td>
+            <td>@quisarrvTime.VR</td>
+            <td>@quisarrvTime.Ps4</td>  
+        </tr>
+         <tr>           
+            <td>標準差</td>
+            <td>@quisarrvTime.Stand_VR</td>
+            <td>@quisarrvTime.Stand_Ps4</td>  
+        </tr>
+    </tbody>
+    </table>
+
+    <hr>
+
+    <h2>QUIS 個用戶資料</h2>
+    <p>本 QUIS 量表滿分為 190 分數越高代表使用者體驗越好！</p>            
+    <table class="table table-hover" style="text-align:center;">
+    <thead>
+        <tr>
+            <th class="col-md-3" style="text-align:center;">用戶名稱</th>
+            <th class="col-md-3" style="text-align:center;">VR 控制器</th>
+            <th class="col-md-3" style="text-align:center;">傳統控制器</th>
+            <th class="col-md-3" style="text-align:center;">偏好取向</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in persionQUIS){
+            <tr>      
+                <td>@item.Key</td>
+                <td>@item.Value.VR</td>
+                <td>@item.Value.Ps4</td>  
+                <td>
+                    @if(item.Value.VR > item.Value.Ps4){
+                        <span> VR 控制器 </span>
+                    }
+                    else{
+                        <span> 傳統控制器 </span>
+                    }
+                    
+                </td> 
+            </tr>
+        }
+       
+    </tbody>
+    </table>
+
+
+
+    <hr>
+
+    <h2>QUIS 數值進行 T 檢定的結果</h2>
+    <p>以使用 VR 控制器 以及 使用傳統控制器的 QUIS 分數進行 T 檢定</p>            
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>顯著性</th>
+            <th>自由度</th>
+            <th>t-統計</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>@quisTestResult.p</th>
+            <td>@quisTestResult.df</td>
+            <td>@quisTestResult.t</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

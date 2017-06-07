@@ -16,8 +16,8 @@
 </style>
 <div class="container">
   <h2>任務平均時間</h2>
-  <p>從十個實驗樣本中所計算出不同任務的平均花費時間</p>            
-  <table class="table table-striped">
+  <p>從十個實驗樣本中所計算出不同任務的平均花費時間 <br> 平均 / 標準差</p>            
+  <table class="table table-hover">
     <thead>
       <tr>
         <th class="col-md-4"></th>
@@ -28,13 +28,13 @@
     <tbody>
       <tr>
         <th>任務一，從遊戲選單，進入遊戲並開始</th>
-        <td>@arrTime.VR_mission01</td>
-        <td>@arrTime.PS4_mission01</td>
+        <td>@arrTime.VR_mission01 / @arrTime.Stand_VR_mission01</td>
+        <td>@arrTime.PS4_mission01 / @arrTime.Stand_PS4_mission01</td>
       </tr>
       <tr>
         <th>任務二，離開並關閉程式</th>
-         <td>@arrTime.VR_mission02</td>
-        <td>@arrTime.PS4_mission02</td>
+         <td>@arrTime.VR_mission02 / @arrTime.Stand_VR_mission02</td>
+        <td>@arrTime.PS4_mission02 / @arrTime.Stand_PS4_mission02</td>
       </tr>
     </tbody>
   </table>
@@ -44,7 +44,7 @@
 
   <h2>任務二的完成情形</h2>
   <p>任務二的結束條件為分別為：完成指定項目 or 玩家死亡，以下表格顯示完成情行</p>            
-  <table class="table table-striped">
+  <table class="table table-hover">
     <thead>
       <tr>
         <th class="col-md-4"></th>
@@ -71,7 +71,7 @@
 
   <h2>使用者的任務完成比例</h2>
   <p>對於相同的使用者，使用傳統搖桿完成任務時間較快的比例</p>            
-  <table class="table table-striped">
+  <table class="table table-hover">
     
     <tbody>
       <tr>
@@ -90,7 +90,7 @@
 
   <h2>任務一 數值進行 T 檢定的結果</h2>
   <p>以使用 VR 控制器 以及 使用傳統控制器的任務時間進行 T 檢定</p>            
-  <table class="table table-striped">
+  <table class="table table-hover">
     <thead>
       <tr>
         <th>顯著性</th>
@@ -111,7 +111,7 @@
 
    <h2>任務二 數值進行 T 檢定的結果</h2>
   <p>以使用 VR 控制器 以及 使用傳統控制器的任務時間進行 T 檢定</p>            
-   <table class="table table-striped">
+   <table class="table table-hover">
     <thead>
       <tr>
         <th>顯著性</th>
